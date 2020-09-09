@@ -5,39 +5,23 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-/**
- * RealTime通信用クライアントオブジェクト
- * 
- */
+
 public class RealTimeClient {
 
     private String MESSAGE_HEADER = "Client -> port30003:";
     private String ipAddress;
 
-    /**
-     * コンストラクタ
-     */
     public RealTimeClient(String ipAddress) {
         this.ipAddress = ipAddress;
     }
 
-    /**
-     * ブール型レジスタにビットを設定
-     * 
-     * @param addr レジスタのアドレス
-     * @param bit  設定するビット
-     */
+
     public void setBitToRegister(int addr, boolean bit) {
         String command = "write_output_boolean_register(" + String.valueOf(addr) + ","
                 + String.valueOf(bit ? "True" : "False") + ")";
         sendCommand(command);
     }
 
-    /**
-     * RealTime通信サーバへコマンド送信
-     * 
-     * @param command コマンド
-     */
     public void sendCommand(String command) {
         try {
 
