@@ -1,0 +1,8 @@
+{
+    "java.configuration.updateBuildConfiguration": "disabled",
+    "beautify.language": {
+        "html": [
+            "htm", "html", "django-html"
+        ]
+    }
+}

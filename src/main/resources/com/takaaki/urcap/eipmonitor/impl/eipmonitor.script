@@ -1,0 +1,5 @@
+conn = rpc_factory("xmlrpc", "http://127.0.0.1:" + to_str({port}) + "/RPC2")
+
+def show_monitor():
+  return conn.eip_monitor.show()
+end
