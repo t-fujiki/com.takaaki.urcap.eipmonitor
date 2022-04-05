@@ -28,11 +28,8 @@ public class EthernetIPMonitorXmlRpcClient extends XmlRpcClient {
 
     public void showMonitor(boolean b) {
         ArrayList<Object> args1 = new ArrayList();
-        ArrayList<Object> args2 = new ArrayList();
-        args1.add(Boolean.valueOf(b));
         try {
-            execute("eipmonitor.set_enable_push_ouput", args1);
-            execute("eipmonitor.show", args2);
+            execute("eip_monitor.show", args1);
         } catch (XmlRpcException e) {
             e.printStackTrace();
         }

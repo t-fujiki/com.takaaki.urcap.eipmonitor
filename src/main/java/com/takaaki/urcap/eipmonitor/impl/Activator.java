@@ -9,15 +9,19 @@ import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
 
+	private final int DEFAULT_PORT = 61101;
+
 	@Override
 	public void start(BundleContext context) throws Exception {
-		EthernetIPMonitorXmlRpcClient ethernetIPMonitorXmlRpcClient = new EthernetIPMonitorXmlRpcClient(null, 60005);
+
+		EthernetIPMonitorXmlRpcClient ethernetIPMonitorXmlRpcClient = new EthernetIPMonitorXmlRpcClient(null,
+				DEFAULT_PORT);
 		EIPToolbarService eipToolbarService = new EIPToolbarService(ethernetIPMonitorXmlRpcClient);
 
-		EthernetIPMonitorInstallationNodeService statusMonitorInstallationNodeService = new EthernetIPMonitorInstallationNodeService(
+		EthernetIPMonitorInstallationNodeService ethernetIPMonitorInstallationNodeService = new EthernetIPMonitorInstallationNodeService(
 				ethernetIPMonitorXmlRpcClient);
 		context.registerService(SwingToolbarService.class, eipToolbarService, null);
-		context.registerService(InstallationNodeService.class, statusMonitorInstallationNodeService, null);
+		context.registerService(InstallationNodeService.class, ethernetIPMonitorInstallationNodeService, null);
 
 	}
 

@@ -22,6 +22,8 @@
 		<urcap.copyright>2020 (C), Takaaki Fujiki</urcap.copyright>
 		<urcap.description>Ethernet/IP I/O Monitor URCap</urcap.description>
 		<urcap.licenseType>None</urcap.licenseType>
+		<urcap.compatibility.CB3>true</urcap.compatibility.CB3>
+		<urcap.compatibility.eSeries>true</urcap.compatibility.eSeries>
 		<!--********************** END OF URCAP META DATA **********************-->
 		<!--********************************************************************-->
 
@@ -106,6 +108,8 @@
 						<Bundle-Copyright>${urcap.copyright}</Bundle-Copyright>
 						<Bundle-LicenseType>${urcap.licenseType}</Bundle-LicenseType>
 						<Bundle-Description>${urcap.description}</Bundle-Description>
+						<URCapCompatibility-CB3>${urcap.compatibility.CB3}</URCapCompatibility-CB3>
+						<URCapCompatibility-eSeries>${urcap.compatibility.eSeries}</URCapCompatibility-eSeries>
 						<!--***************************************************************-->
 						<Import-Package>
 							com.ur.urcap.api*;version="[1.2.0,2.0.0)",
@@ -246,7 +250,7 @@
 		<dependency>
 			<groupId>com.ur.urcap</groupId>
 			<artifactId>api</artifactId>
-			<version>1.9.0</version>
+			<version>1.12.0</version>
 			<scope>provided</scope>
 		</dependency>
 
