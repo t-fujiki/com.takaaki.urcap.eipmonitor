@@ -2,6 +2,7 @@ package com.takaaki.urcap.eipmonitor.impl;
 
 import com.takaaki.urcap.eipmonitor.impl.iomonitor.IOMonitorFrame;
 import com.takaaki.urcap.eipmonitor.impl.xmlrpc.EthernetIOMonitorXmlRpcServer;
+import com.takaaki.urcap.eipmonitor.impl.xmlrpc.EthernetIPMonitorXmlRpcClient;
 import com.ur.urcap.api.contribution.InstallationNodeContribution;
 import com.ur.urcap.api.domain.URCapAPI;
 import com.ur.urcap.api.domain.data.DataModel;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 import static com.ur.urcap.api.ui.component.InputEvent.EventType.ON_PRESSED;
 
 public class EthernetIPMonitorInstallationNodeContribution implements InstallationNodeContribution {
-
+	private EthernetIPMonitorXmlRpcClient ethernetIPMonitorXmlRpcClient;
 	public URCapAPI api;
 	public DataModel model;
 
@@ -76,9 +77,11 @@ public class EthernetIPMonitorInstallationNodeContribution implements Installati
 
 	}
 
-	public EthernetIPMonitorInstallationNodeContribution(URCapAPI api, DataModel model) {
+	public EthernetIPMonitorInstallationNodeContribution(URCapAPI api, DataModel model,
+			EthernetIPMonitorXmlRpcClient ethernetIPMonitorXmlRpcClient) {
 		this.api = api;
 		this.model = model;
+		this.ethernetIPMonitorXmlRpcClient = ethernetIPMonitorXmlRpcClient;
 
 		if (ioMonitorFrame != null) {
 			ioMonitorFrame.dispose();
