@@ -5,7 +5,7 @@
 
 	<groupId>com.takaaki.urcap</groupId>
 	<artifactId>eipmonitor</artifactId>
-	<version>1.1</version>
+	<version>1.2</version>
 	<name>Ethernet/IP I/O Monitor URCap</name>
 	<packaging>bundle</packaging>
 
