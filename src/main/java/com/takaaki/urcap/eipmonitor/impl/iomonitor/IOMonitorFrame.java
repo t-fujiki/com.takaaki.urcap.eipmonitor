@@ -61,7 +61,7 @@ public class IOMonitorFrame extends DialogFrame {
     private final String BTN_HIDE = "Close";
 
     private final int FRAME_WIDTH = 660;
-    private final int FRAME_HEIGHT = 530;
+    private final int FRAME_HEIGHT = 550;
 
     private final int TITLE_WIDTH = 480;
     private final int TITLE_HEIGHT = 30;
@@ -577,15 +577,17 @@ public class IOMonitorFrame extends DialogFrame {
 
                     if (defname.indexOf("GP_bool_in") != -1) {
                         int index = Integer.valueOf(defname.replace("GP_bool_in[", "").replace("]", ""));
-                        isDefinedInputBits[index] = true;
-
-                        label_inputTitle[index].setText(ioname);
+                        if (index < 64) {
+                            isDefinedInputBits[index] = true;
+                            label_inputTitle[index].setText(ioname);
+                        }
 
                     } else if (defname.indexOf("GP_bool_out") != -1) {
                         int index = Integer.valueOf(defname.replace("GP_bool_out[", "").replace("]", ""));
-                        isDefinedOutputBits[index] = true;
-
-                        label_outputTitle[index].setText(ioname);
+                        if (index < 64) {
+                            isDefinedOutputBits[index] = true;
+                            label_outputTitle[index].setText(ioname);
+                        }
 
                     }
 
@@ -613,16 +615,17 @@ public class IOMonitorFrame extends DialogFrame {
 
                     if (defname.indexOf("GP_int_in") != -1) {
                         int index = Integer.valueOf(defname.replace("GP_int_in[", "").replace("]", ""));
-                        isDefinedInputIntegers[index] = true;
-
-                        label_inputTitle[index].setText(ioname);
+                        if (index < 24) {
+                            isDefinedInputIntegers[index] = true;
+                            label_inputTitle[index].setText(ioname);
+                        }
 
                     } else if (defname.indexOf("GP_int_out") != -1) {
                         int index = Integer.valueOf(defname.replace("GP_int_out[", "").replace("]", ""));
-                        isDefinedOutputIntegers[index] = true;
-
-                        label_outputTitle[index].setText(ioname);
-
+                        if (index < 24) {
+                            isDefinedOutputIntegers[index] = true;
+                            label_outputTitle[index].setText(ioname);
+                        }
                     }
 
                 }
@@ -647,15 +650,17 @@ public class IOMonitorFrame extends DialogFrame {
 
                     if (defname.indexOf("GP_float_in") != -1) {
                         int index = Integer.valueOf(defname.replace("GP_float_in[", "").replace("]", ""));
-                        isDefinedInputFloats[index] = true;
-
-                        label_inputTitle[index].setText(ioname);
+                        if (index < 24) {
+                            isDefinedInputFloats[index] = true;
+                            label_inputTitle[index].setText(ioname);
+                        }
 
                     } else if (defname.indexOf("GP_float_out") != -1) {
                         int index = Integer.valueOf(defname.replace("GP_float_out[", "").replace("]", ""));
-                        isDefinedOutputFloats[index] = true;
-
-                        label_outputTitle[index].setText(ioname);
+                        if (index < 24) {
+                            isDefinedOutputFloats[index] = true;
+                            label_outputTitle[index].setText(ioname);
+                        }
 
                     }
 
